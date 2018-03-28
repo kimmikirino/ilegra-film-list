@@ -3,7 +3,9 @@
 
 var ilegra = angular.module('ilegra', [
   'ngRoute',
-  'compiledTemplates'
+  'compiledTemplates',
+  'ilegraServices',
+  'appConfig'
 ]);
 
 ilegra.config(['$routeProvider', '$httpProvider',
@@ -27,7 +29,11 @@ ilegra.run(['$rootScope', '$location', function($rootScope, $location) {
 /************************************************************************************************
  * Controllers
  ************************************************************************************************/
-ilegra.controller('filmsController', ['$scope', '$rootScope',
-  function( $scope, $rootScope) {
+ilegra.controller('filmsController', ['$scope', '$rootScope', 'ilegraServices',
+  function( $scope, $rootScope, ilegraServices) {
     console.log('teste');
+    ilegraServices.getFilms().$promise.then((data) => {
+      console.log(data);
+      $scope.films = data.results;
+    });
   }]);

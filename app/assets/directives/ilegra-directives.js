@@ -1,9 +1,9 @@
 'use strict';
 /* global angular */
 
-var fazenda = angular.module('fazenda');
+var ilegra = angular.module('ilegra');
 
-fazenda.directive('pageHeader', ['$rootScope', '$location',  function ( $rootScope, $location) {
+ilegra.directive('pageHeader', ['$rootScope', '$location',  function ( $rootScope, $location) {
     return {
         restrict: 'E',
         templateUrl:  'assets/directives/header.html',
