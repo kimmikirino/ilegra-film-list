@@ -1,7 +1,13 @@
-<section class="container">
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="film in films">
-            {{film.title}}
-        </li>
-    </ul>
+<section class="container film">
+    <div class="card" ng-repeat="film in ::films | orderBy: 'episode_id' track by film.episode_id">
+        <img class="card-img-top" src="../assets/images/starwars.png" alt="Card image cap">
+        <div class="card-block">
+            <h3 class="card-header">{{film.title}}</h3>
+            <h4 class="card-title card-pad">Episode: {{getEpisode(film.episode_id)}}</h4>
+            <p class="card-text card-pad"><b>Opening:</b> {{film.opening_crawl}}</p>
+            <p class="card-text card-pad"><b>Created:</b> {{created(film.created)}}</p>
+            <p class="card-text card-pad"><small><b>Director:</b> {{film.director}}</small></p>
+            <p class="card-text card-pad"><small><b>Producer:</b> {{film.producer}}</small></p>
+        </div>
+    </div>
 </section>

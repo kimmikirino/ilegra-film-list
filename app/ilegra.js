@@ -31,7 +31,18 @@ ilegra.run(['$rootScope', '$location', function($rootScope, $location) {
  ************************************************************************************************/
 ilegra.controller('filmsController', ['$scope', '$rootScope', 'ilegraServices',
   function( $scope, $rootScope, ilegraServices) {
-    console.log('teste');
+
+    const episode = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+    
+    $scope.getEpisode = (ep) => {
+      return episode[ep];
+    };
+
+    $scope.created = (createdDate) => {
+      const date = new Date(createdDate);
+      return date.getDay() + '/' + (date.getMonth()+1) + '/' + date.getFullYear(); 
+    };
+
     ilegraServices.getFilms().$promise.then((data) => {
       console.log(data);
       $scope.films = data.results;

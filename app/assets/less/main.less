@@ -5,15 +5,44 @@ body {
   background-color: @bodyColor;
   font-family: 'Montserrat', sans-serif;
   color: @fontColor;
+  font-family: Roboto;
+  line-height: 1.25rem;
 }
 
 .page-header {
   text-align: center;
   padding: 20px;
-  .page-header__brand {
-  }
 
   .page-header__title {
     margin-top: 10px;
   }
+}
+
+.film {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  color: #e8e8e8;
+  background-color: #545454;
+  margin: 1.25rem auto;
+  max-width: 430px;
+}
+
+.card-pad {
+  padding: 0 1.25rem;
+  &:last-child {
+      margin-bottom: 1rem;
+  }
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.card-title {
+  padding-top: 0.75rem;
 }
