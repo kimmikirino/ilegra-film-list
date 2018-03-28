@@ -1,0 +1,53 @@
+{
+  "name": "ilegra",
+  "version": "1.0.0",
+  "description": "Ilegra Frontend Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimmikirino/ilegra-film-list.git"
+  },
+  "keywords": [
+    "frontend",
+    "angularjs"
+  ],
+  "author": "Jaqueline Kimmi Kirino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimmikirino/ilegra-film-list/issues"
+  },
+  "homepage": "https://github.com/kimmikirino/ilegra-film-list#readme",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-angular-templates": "^1.1.0",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-jasmine": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-html-snapshots": "^1.0.1",
+    "grunt-template-jasmine-istanbul": "^0.5.0",
+    "grunt-usemin": "^3.1.1",
+    "jshint-stylish": "^2.2.1",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "engines": {
+    "node": ">=9.6.1"
+  },
+  "dependencies": {
+    "connect": "^3.6.6",
+    "jit-grunt": "^0.10.0",
+    "serve-static": "^1.13.2"
+  }
+}
