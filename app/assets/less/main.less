@@ -23,11 +23,15 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
 }
 
 .card {
   color: #e8e8e8;
-  background-color: #545454;
+  background-color: @cardColor;
   margin: 1.25rem auto;
   max-width: 430px;
 }
@@ -45,4 +49,15 @@ body {
 
 .card-title {
   padding-top: 0.75rem;
+}
+
+.btn-dark {
+  font-size: 0.8rem;
+}
+
+.modal-films {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.64);
+  color: @cardColor;
+  overflow: auto;
 }

@@ -3,9 +3,15 @@
 var ilegraServices = angular.module('ilegraServices', ['ngResource', 'appConfig']);
 
 ilegraServices.service('ilegraServices', ['$resource', 'ilegraConfig', function($resource, ilegraConfig){
-    this.getFilms = function (callbackFunction) {
+    this.getFilms = function () {
         return $resource(
             ilegraConfig.endpoint
+        ).get();
+    };
+
+    this.getAll = function(route) {
+        return $resource(
+            route
         ).get();
     };
 }]);

@@ -31,19 +31,42 @@ ilegra.run(['$rootScope', '$location', function($rootScope, $location) {
  ************************************************************************************************/
 ilegra.controller('filmsController', ['$scope', '$rootScope', 'ilegraServices',
   function( $scope, $rootScope, ilegraServices) {
-
     const episode = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
-    
-    $scope.getEpisode = (ep) => {
+    $scope.show = false;
+
+    $scope.getEpisode = function(ep) {
       return episode[ep];
     };
 
-    $scope.created = (createdDate) => {
+    $scope.convertDate = function(createdDate) {
       const date = new Date(createdDate);
       return date.getDay() + '/' + (date.getMonth()+1) + '/' + date.getFullYear(); 
     };
 
-    ilegraServices.getFilms().$promise.then((data) => {
+    $scope.showModal = function() {
+      $scope.show = !$scope.show; 
+      if ($scope.show) {
+        $("body").addClass("modal-open");
+      } else {
+        $("body").removeClass("modal-open");
+      }
+    };
+
+    $scope.seeChars = function(chars, title) {
+      $scope.characters = [];
+      $scope.title = title;
+      chars.map(function(char) {
+        ilegraServices.getAll(char).$promise.then(function(data){
+          $scope.characters.push(data);
+          if ($scope.characters.length === chars.length) {
+            console.log($scope.characters);
+            $scope.showModal();
+          }
+        });
+      });
+    };
+
+    ilegraServices.getFilms().$promise.then(function(data) {
       console.log(data);
       $scope.films = data.results;
     });

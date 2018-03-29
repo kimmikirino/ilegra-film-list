@@ -14,7 +14,7 @@ git clone https://github.com/kimmikirino/ilegra-film-list.git
 
 ### Pré requisitos
 
-É necessário ter o Node/NPM instalados.
+É necessário ter o Node/NPM e Grunt instalados.
 
 ### Instalação
 
@@ -36,3 +36,7 @@ grunt server
 ### Edição
 
 Acesse a pasta /app
+
+### Observação
+
+Caso usar o navegador Google Chrome, habilitar o CORS.
