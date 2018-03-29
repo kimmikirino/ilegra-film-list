@@ -336,7 +336,7 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:kimmikirino/ilegra-film-list.git',
+          remote: 'git@github.com:ilegra-film-list.git',
           branch: 'gh-pages'
         }
       },
