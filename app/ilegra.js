@@ -33,6 +33,7 @@ ilegra.controller('filmsController', ['$scope', '$rootScope', 'ilegraServices',
   function( $scope, $rootScope, ilegraServices) {
     const episode = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
     $scope.show = false;
+    $scope.loading = true;
 
     $scope.getEpisode = function(ep) {
       return episode[ep];
@@ -52,22 +53,28 @@ ilegra.controller('filmsController', ['$scope', '$rootScope', 'ilegraServices',
       }
     };
 
+    $scope.isLoading = function() {
+      $scope.loading = !$scope.loading;
+    };
+
     $scope.seeChars = function(chars, title) {
+      $scope.isLoading();
       $scope.characters = [];
       $scope.title = title;
       chars.map(function(char) {
         ilegraServices.getAll(char).$promise.then(function(data){
           $scope.characters.push(data);
           if ($scope.characters.length === chars.length) {
-            console.log($scope.characters);
+            $scope.isLoading();
             $scope.showModal();
+
           }
         });
       });
     };
 
     ilegraServices.getFilms().$promise.then(function(data) {
-      console.log(data);
       $scope.films = data.results;
+      $scope.isLoading();
     });
   }]);

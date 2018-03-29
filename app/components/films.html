@@ -1,4 +1,7 @@
 <section class="container film">
+    <div class="loader-box" ng-show="loading">
+        <div class="loader"></div>
+    </div>
     <div class="card" ng-repeat="film in ::films | orderBy: 'episode_id' track by film.episode_id">
         <img class="card-img-top" src="../assets/images/starwars.png" alt="Card image cap">
         <div class="card-block">
@@ -31,13 +34,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-lg">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="charsModallLabel">Modal title</h5>
+                    <h5 class="modal-title" id="charsModallLabel">{{title}} Characters</h5>
                     <button type="button" class="close" ng-click="showModal()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h3>{{title}} Characters</h3>
                     <table class="table">
                         <thead>
                             <tr>
